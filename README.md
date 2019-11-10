@@ -3,40 +3,30 @@ This is a series of steps towards doing the Hands-On-Labs for ReactJS training. 
 
 ## Lab 1: Empty React project and Domain Model
 
+Our first step is to create the React project using a React tool that scaffolds out the most common arrangement of tools and source directories. While it's not required to do this, and you can start by using React in more of an ad-hoc manner, many people are building React applications from the ground up this way, so let's follow their path.
+
 ### Step 1: Create the React project
+
+The "create-react-app" tool is a standalone npm package that provides us with a command-line program to get started. We need to grab that, and invoke it.
+
+* *Install create-react-app.* From a command-line prompt, use npm to install create-react-app globally (`npm install -g create-react-app`). This may take some time (five minutes is generally the worst we've observed in the wild, depending on the quality of your WiFi).
+
+* *Use it to create our application directory.* From your working directory, run `create-react-app rjoke`. This will create the `rjoke` directory and populate it with a scaffolded default application. (Note: if you are a fan of Typescript, you can pass "`--typescript`" to the command-line in order to generate the app to use Typescript instead of the usual ECMAScript; this is only recommended for those who are comfortable with both Typescript and ECMAScript, and we will not be covering Typescript in this workshop.) 
+
+* *Start the app.* Just to verify everything worked as planned, run `npm start` from within the `rjoke` directory. It should start up a local web server and then bring up your default web browser connecting to [the running application](http://localhost:3000). Note that the web server continues to run in the background, and will refresh itself as it detects changes to your code.
+
+* *Modify the default message.* Just for fun, modify the stock message ("Edit App.js and save to reload") to read "I am now a React developer!" in the `rjoke/src/App.js` file. Save it, and see it modified in the browser without any additional work required. This "edit-refresh" cycle is common in React. You are always free to shut the server down and restart, but generally a React app will not need that as often as a compiled-language application will.
 
 ### Step 2: Create a domain model
 
+Next we need a domain model for our application. This will be a class called "Joke" that basically acts purely as a storage of data elements (sometimes referred to as a "DTO" or "Data Transfer Object"). This class will be pretty barebones, since we don't really have much in the way of domain logic (largely because we're keeping it simple to focus on the React parts!).
 
+* *Create the domain class.* In a file called `Joke.js` in the `src` directory, define and export a class called `Joke`. It should have a constructor that takes a `setup`, a `punchline`, `lols` and `groans` as parameters, all of which are stored to the instance as fields. (The first two are intended to be strings, the second two, numbers.) Don't forget that ECMAScript 6 class syntax requires the use of `this` whenever referring to anything stored on the object instance.
 
-## Setup
+* *Define the Joke list in the App.* In `App.js`, define an array of Joke objects as a local variable (call it `jokes`) to the `App` function. Put some of your favorite jokes into this array. Give each a few LOLs and groans just for variety.
 
-If you are doing React for the first time, there are a few things you should have installed on your machine:
+Reminder: if the server is running, each time you save, it will try to reload the application and display it in the browser. If there are syntax errors, it will try to point out where those errors are, with varying degrees of success.
 
-* [NodeJS](https://nodejs.org): Download the "LTS" (Long-Term Support) version for your platform, or use your platform's favorite package manager to install Node. If you have Node already installed, verify you have a relatively recent version by running `node -v`; anything after 6.x should work fine.
+## Finishing up
 
-* [Git](https://git-scm.com): This lab assumes you have some familiarity with Git at the command-line, but not much is required. If you choose to use Git from a tool other than the command-line (such as from within SourceTree or VisualStudio), you will need to be able to check out branches.
-
-* Text editor: You will need a text editor with which you are somewhat comfortable; I like [VSCode](https://code.visualstudio.com), but this is a topic of some discussion. The assumption is that during the labs, we will be running commands from the command-line, so if you use an editor with an integrated terminal, you may find it a more seamless/smooth experience. If you have Visual Studio installed, you probably still want to download a standalone editor--Visual Studio is great for doing .NET, and can be useful when doing a "mixed" React/.NET project, but this is going to be all React, all the time, and most of Visual Studio's approach will be overkill and wildly distracting or inappropriate for us.
-
-* A recent version of a modern browser: Usually this means Chrome latest, but recent versions of any modern browser should also work.
-
-This will get all of the necessary tools set up on your machine. To begin the labs, you have a choice: clone the project, or create a new project.
-
-## Make your choice
-
-There's pros and cons to each approach:
-
-* *Create a new project* If you choose to create a new project, then simply create a directory somewhere on your development machine in which to do the work. The lab manual is in this GitHub project, however, so you will need to keep a browser window open to this page, and switching between the labs will simply be clicking the "Branch" dropdown to select the appropriate branch, and reading the README file displayed for that branch. This is the recommended approach, as it allows/forces you to do all the work by hand, which reinforces what you've heard in the lectures. This is the path that the lab instructions assume you are taking. (Note that even if you choose this path, you can still look at our solutions by selecting the next lab and looking at the starting point for that code. That is, if you are stuck on Lab 1, you can switch to Lab 2 and look at the files there, since Lab 2 picks up where Lab 1 finishes.)
-
-* *Clone this project* In this scenario, you clone the project to your local machine, and any time you want to work on the next lab manual, you do a `git checkout lab-1` to advance to the lab step desired. Having a clone of the project ensures that you have everything local, in case the Internet goes wonky or you want to explore on the plane flight home, but does run the risk that you may have to "git stash" your changes when you move back and forth between branches. ***NOTE:*** Regardless of whether you want to work in this directory, or just run the code in this project, make sure to run `npm install` in this directory before `ng serve` or `ng test`, or you may get strange errors. (`npm` is the Node Package Manager, and it is used to pull down all the dependencies--including React itself--into the current directory so that the project can run.)
-
-## Ready?
-
-At this point, you are ready to begin the labs. Select "Branch: lab-1" in the Github browser window to bring up the README for Lab 1, which contains the lab instructions.
-
-## Note on the MIT License
-
-It's a hands-on-lab workshop, people. Don't be silly and do something stupid like put it into production. I shouldn't even have to tell you that, but lawyers are lawyers, and so it's all MIT-licensed so that it's legally clear that bad stuff could happen.
-
-Note that while I own the IP on this project, you are free to hand the link to this project out to anyone you like back at the office, if you think it's helpful. Pull requests to correct typos in the code or the source are always welcome, and we thank you in advance for the assist.
+If you are not sure if you got it all to work, you can always fast-forward to the next lab by doing a `git checkout lab-2`. You may be required to do a `git stash` before the checkout in order to preserve your interim changes.
