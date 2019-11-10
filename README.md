@@ -1,6 +1,14 @@
 # ReactLabs
 This is a series of steps towards doing the Hands-On-Labs for ReactJS training. Each lab step is in its own Git branch, so that each step can be done independently if desired.
 
+## Lab 1: Empty React project and Domain Model
+
+### Step 1: Create the React project
+
+### Step 2: Create a domain model
+
+
+
 ## Setup
 
 If you are doing React for the first time, there are a few things you should have installed on your machine:
