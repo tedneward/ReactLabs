@@ -1,7 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Joke } from './Joke';
+import { Joke, JokeUI, JokeList } from './Joke';
+import { Header } from './Header';
+import { Footer } from './Footer';
 
 function App() {
   const jokes = [
@@ -16,20 +18,12 @@ function App() {
   ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          I am a React developer now!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+
+      {/* <JokeUI joke={jokes[0]} /> */}
+      <JokeList jokes={jokes} />
+
+      <Footer company="Neward &amp; Associates, LLC" />
     </div>
   );
 }
