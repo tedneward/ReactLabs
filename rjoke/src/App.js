@@ -5,10 +5,14 @@ import { Joke } from './Joke';
 
 function App() {
   const jokes = [
-    new Joke("Joke setup", "Joke punchline", 0, 0),
-    new Joke("Joke setup", "Joke punchline", 0, 0),
-    new Joke("Joke setup", "Joke punchline", 0, 0),
-    new Joke("Joke setup", "Joke punchline", 0, 0),
+    new Joke("Why did the Republican chicken cross the road?",
+      "FAKE NEWS!", 0, 0),
+    new Joke("Why did the Democrat chicken cross the road?",
+      "IMPEACH IT!", 0, 0),
+    new Joke("Why did the millennial chicken cross the road?",
+      "OK boomer", 0, 0),
+    new Joke("Why did Chuck Norris cross the road?",
+      "He was hungry for chicken!", 0, 0)
   ];
   return (
     <div className="App">
