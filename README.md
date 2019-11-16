@@ -3,6 +3,8 @@ This is a series of steps towards doing the Hands-On-Labs for ReactJS training. 
 
 ## Lab 3: Play with me!
 
+*** NOTE: *** This lab is by far the longest, and most involved, of the lab set. Do not despair if it seems overwhelming! This is where the bulk of the non-trivial work will be done, and it is to be expected that you will struggle at times. Remember that you can always "stash" your current work and see what the solution looks like by doing a `git checkout final`, but as much as you can, try to solve it before looking up the answers. You will get much more out of the lab by struggling through it. We promise!
+
 Our app is now displaying jokes, but the Product Owner remains unimpressed. "I want to be able to upvote the jokes that I found made me laugh, and the CEO wants to be able to upvote the jokes that are really, really bad, probably so that we can highlight those on the home page or something. And showing the punchlines without the setup text is not what we want. Show the setup text, but hide the punchline until the user clicks on it." Clearly we need to add some interactivity to the app. Ready?
 
 ### Step 1: Modify JokeUI to hide the punchline
@@ -53,4 +55,4 @@ Almost all of the work we will do in this step will be in the JokeUI component, 
 
 ## Finishing up
 
-If you are not sure if you got it all to work, you can always fast-forward to the next lab by doing a `git checkout lab-4`. You may be required to do a `git stash` before the checkout in order to preserve your interim changes.
+If you are not sure if you got it all to work, you can always fast-forward to the next lab by doing a `git checkout final`. You may be required to do a `git stash` before the checkout in order to preserve your interim changes.
