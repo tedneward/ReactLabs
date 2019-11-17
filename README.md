@@ -1,5 +1,5 @@
 # ReactLabs
-This is a series of steps towards doing the Hands-On-Labs for ReactJS training. Each lab step is in its own Git branch, so that each step can be done independently if desired.
+This is a series of steps towards doing the Hands-On-Labs for ReactJS training. Each lab step is in its own Git branch, so that each step can be done independently if desired. The workshop slides can be found [here](http://www.newardassociates.com/slides/Workshops/React.pdf) if you want to have a look at them.
 
 ## Setup
 
